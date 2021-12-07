@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
-        bulletsCount = 5;
+        bulletsCount = 20;
     }
 
 

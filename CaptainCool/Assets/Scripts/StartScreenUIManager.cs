@@ -5,7 +5,7 @@ public class StartScreenUIManager : MonoBehaviour
 {
     public void StartButtonClicked()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
 
     public void SettingsButtonClicked()
