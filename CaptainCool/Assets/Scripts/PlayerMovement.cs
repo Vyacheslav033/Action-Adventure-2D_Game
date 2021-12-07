@@ -68,13 +68,10 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsJumping", true);
         }
 
-  
-
 
     }
 
-
-    void slide()
+    private void slide()
     {
         if (slideKeyDown)
         {
@@ -94,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    IEnumerator stopSliding()
+    private IEnumerator stopSliding()
     {
         yield return new WaitForSeconds(0.5f);
         animator.SetBool("IsSliding", false);
@@ -104,27 +101,35 @@ public class PlayerMovement : MonoBehaviour
         isSliding = false;
     }
 
-    void jump()
+    private void jump()
     {
         if (jumpKeyDown && isGrounded)
         {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);   //adding force to rigidBody.
-                                                                            //rb.velocity = new Vector2(0f, jumpForce);
+            // Adding force to rigidBody.
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
 
-            animator.SetBool("IsJumping", true);   //enabling the jump animation.
+            // Enabling the jump animation.
+            animator.SetBool("IsJumping", true);   
 
             isGrounded = false;
             jumpKeyDown = false;
         }
     }
 
-    void moveHorizontal()
+    private void moveHorizontal()
     {
-        rb.velocity = new Vector2(movement * moveSpeed, rb.velocity.y);  //adding the velocity to the rigidBody
-        animator.SetFloat("Speed", Mathf.Abs(movement));   //enabling or disabling run animation.
+        // Adding the velocity to the rigidBody
+        rb.velocity = new Vector2(movement * moveSpeed, rb.velocity.y);
+
+        // Enabling or disabling run animation.
+        animator.SetFloat("Speed", Mathf.Abs(movement));   
     }
 
-    private void OnTriggerStay2D(Collider2D collision)  //checking the player it is grounded  or not.
+    /// <summary>
+    /// Checking the player it is grounded or not.
+    /// </summary>
+    /// <param name="collision"> Collider2D. </param>
+    private void OnTriggerStay2D(Collider2D collision)  
     {
         if (collision != null && collision != cameraCollider.getCollider())
         {
@@ -138,30 +143,33 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
     }
 
-    private void Flip()  //fliping the player direction.
+    /// <summary>
+    /// Fliping the player direction.
+    /// </summary>
+    private void Flip() 
     {
-        P_facingRight = !P_facingRight;   // Switch the way the player is labelled as facing.
-
-        //Vector3 theScale = transform.localScale;
-        //theScale.x *= -1;   // Multiply the player's x local scale by -1.
-        //transform.localScale = theScale;
+        // Switch the way the player is labelled as facing.
+        P_facingRight = !P_facingRight;   
 
         transform.Rotate(0f, 180f, 0f);
     }
 
-    void dead() //calling through animation event(at end frame)
+    /// <summary>
+    /// Calling through animation event(at end frame)
+    /// </summary>
+    private void dead() 
     {
         Destroy(gameObject);
         enablingUI();
     }
 
-    void preDeath()  //calling through animation event(at end frame)
+    private void preDeath()  //calling through animation event(at end frame)
     {
         Destroy(gameObject, 1f);
         enablingUI();
     }
 
-    void enablingUI()
+    private void enablingUI()
     {
         gameOverText.enabled = true; //enabling the game over text
         restartLevel.SetActive(true); //enabling restart button

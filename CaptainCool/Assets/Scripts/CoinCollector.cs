@@ -2,11 +2,11 @@
 
 public class CoinCollector : MonoBehaviour
 {
-    private static int noOfCoins;
+    private static int coinsCount;
 
     private void Start()
     {
-        noOfCoins = 0;
+        coinsCount = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -14,13 +14,12 @@ public class CoinCollector : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            noOfCoins++;
-            //Debug.Log("coins ==" + noOfCoins);
+            coinsCount++;
         }
     }
 
-    public static int getNoOfCoins()
+    public static int GetCoinsCount()
     {
-        return noOfCoins;
+        return coinsCount;
     }
 }

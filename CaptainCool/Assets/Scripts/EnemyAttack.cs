@@ -2,7 +2,7 @@
 
 public class EnemyAttack : MonoBehaviour
 {    
-    Animator animator;
+    private Animator animator;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -10,5 +10,4 @@ public class EnemyAttack : MonoBehaviour
         animator = collision.gameObject.GetComponent<Animator>();
         animator.SetBool("IsDead", true);
     }
-
 }

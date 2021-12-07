@@ -3,17 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class StartScreenUIManager : MonoBehaviour
 {
-   
-    public void startButtonClicked()
+    public void StartButtonClicked()
     {
-        //Application.LoadLevel(1);
         SceneManager.LoadScene(1);
     }
 
-    public void exitButtonClicked()
+    public void SettingsButtonClicked()
+    {
+        // TODO: настройки
+    }
+
+    public void ExitButtonClicked()
     {
         Application.Quit();
         Debug.Log("Quit!");
     }
-
 }

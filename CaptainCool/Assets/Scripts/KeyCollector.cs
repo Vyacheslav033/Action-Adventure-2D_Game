@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class KeyCollector : MonoBehaviour
 {
-    static bool haveRightKey;
+    private static bool haveRightKey;
 
     private void Start()
     {
         haveRightKey = false;
     }
+
     public static bool HaveRightKey ()
     {
         return haveRightKey;
@@ -21,7 +22,6 @@ public class KeyCollector : MonoBehaviour
         {
             Destroy(gameObject);
             haveRightKey = true;
-            //Debug.Log("have right key " + haveRightKey);
         }
     }
     

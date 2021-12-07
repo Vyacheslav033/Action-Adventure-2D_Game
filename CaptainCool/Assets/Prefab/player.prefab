@@ -55,6 +55,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -196,6 +197,10 @@ EdgeCollider2D:
   - {x: -0.8031939, y: 0.69211245}
   - {x: -0.17026131, y: 0.19488478}
   - {x: 1.0345842, y: -2.0010104}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!114 &3351066231323947299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +236,7 @@ MonoBehaviour:
   bullet: {fileID: 2860695982394991324, guid: 27e764f6206c1294e9be280e1c1efcf2, type: 3}
   firePosition: {fileID: 3351066231325096972}
   animator: {fileID: 3351066231323947296}
+  bulletsCount: 20
 --- !u!114 &7314899899027408303
 MonoBehaviour:
   m_ObjectHideFlags: 0
