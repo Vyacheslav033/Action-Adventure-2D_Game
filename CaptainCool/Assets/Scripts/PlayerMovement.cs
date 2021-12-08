@@ -174,5 +174,4 @@ public class PlayerMovement : MonoBehaviour
         gameOverText.enabled = true; //enabling the game over text
         restartLevel.SetActive(true); //enabling restart button
     }
-
 }

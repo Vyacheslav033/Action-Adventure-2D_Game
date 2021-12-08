@@ -9,5 +9,4 @@ public class UIBulletUpdater : MonoBehaviour
     {
         BulletsCountUI.text = Weapon.GetBulletsCount().ToString();
     }
-
 }

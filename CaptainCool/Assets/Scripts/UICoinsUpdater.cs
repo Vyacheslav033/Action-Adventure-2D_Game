@@ -9,5 +9,4 @@ public class UICoinsUpdater : MonoBehaviour
     {
         СoinsCountUI.text = CoinCollector.GetCoinsCount().ToString();
     }
-
 }

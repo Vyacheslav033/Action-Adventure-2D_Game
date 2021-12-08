@@ -13,5 +13,4 @@ public class NextLevel : KeyCollector
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
-    
 }
