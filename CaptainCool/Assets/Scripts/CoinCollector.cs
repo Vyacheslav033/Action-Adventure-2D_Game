@@ -18,8 +18,5 @@ public class CoinCollector : MonoBehaviour
         }
     }
 
-    public static int GetCoinsCount()
-    {
-        return coinsCount;
-    }
+    public static int CoinsCount { get => coinsCount; set => coinsCount = value; }
 }

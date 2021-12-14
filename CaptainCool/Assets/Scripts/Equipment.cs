@@ -5,18 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Equipment
+public static class Equipment
 {
-    private int bulletsCount;
-
-    public Equipment(int bulletsCount)
-    {
-        this.bulletsCount = bulletsCount;
-    }
-
-    public int BulletsCount
-    {
-        get { return bulletsCount; }
-        set { bulletsCount = value; }
-    }
+    public static int BulletsCount { get; set; }
 }

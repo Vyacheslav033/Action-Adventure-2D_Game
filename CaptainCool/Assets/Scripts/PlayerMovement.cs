@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -39,20 +40,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        
-            //all input related work done here.
-            movement = Input.GetAxisRaw("Horizontal");   //geting the input on horizontal axis.
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu");
+        }
 
-            if (!jumpKeyDown && isGrounded)
-            {
-                jumpKeyDown = Input.GetButtonDown("Jump");   //checking for jump key down.
-            }
 
-            if (!slideKeyDown && isGrounded && Mathf.Abs(rb.velocity.x) > 0.05)
-            {
-                slideKeyDown = Input.GetKeyDown(KeyCode.S);   //checking for slide key down. 
-            }
-        
+        //all input related work done here.
+        movement = Input.GetAxisRaw("Horizontal");   //geting the input on horizontal axis.
+
+        if (!jumpKeyDown && isGrounded)
+        {
+            jumpKeyDown = Input.GetButtonDown("Jump");   //checking for jump key down.
+        }
+
+        if (!slideKeyDown && isGrounded && Mathf.Abs(rb.velocity.x) > 0.05)
+        {
+            slideKeyDown = Input.GetKeyDown(KeyCode.S);   //checking for slide key down. 
+        }
 
         if (movement > 0 && !P_facingRight)   //checking for player faceing direction.
         {
