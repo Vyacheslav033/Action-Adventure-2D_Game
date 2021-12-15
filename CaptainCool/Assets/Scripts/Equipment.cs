@@ -5,7 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
+/// <summary>
+/// Снаряжение.
+/// </summary>
 public static class Equipment
 {
-    public static int BulletsCount { get; set; }
+    private const int startBulletsCount = 20;
+
+    public static int BulletsCount { get; set; } = startBulletsCount;
+
+    public static void RestartBullets()
+    {
+        BulletsCount = startBulletsCount;
+    }
+
 }

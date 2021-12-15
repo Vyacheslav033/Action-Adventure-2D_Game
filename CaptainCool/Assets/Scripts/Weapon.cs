@@ -8,12 +8,6 @@ public class Weapon : MonoBehaviour
     public Transform firePosition;
     public Animator animator;
 
-    private void Start()
-    {
-        Equipment.BulletsCount = 20;
-    }
-
-
     private void Update()
     {
         if (Input.GetButtonDown("Fire1") && Equipment.BulletsCount > 0)
@@ -27,10 +21,5 @@ public class Weapon : MonoBehaviour
     {
         Instantiate(bullet, firePosition.position, firePosition.rotation);
         Equipment.BulletsCount -= 1;
-    }
-
-    public static int GetBulletsCount()
-    {
-        return Equipment.BulletsCount;
     }
 }

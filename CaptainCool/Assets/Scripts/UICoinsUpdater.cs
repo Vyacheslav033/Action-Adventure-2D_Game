@@ -7,6 +7,6 @@ public class UICoinsUpdater : MonoBehaviour
 
     private void Update()
     {
-        СoinsCountUI.text = CoinCollector.CoinsCount.ToString();
+        СoinsCountUI.text = Wallet.CoinsCount.ToString();
     }
 }

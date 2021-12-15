@@ -7,6 +7,6 @@ public class UIBulletUpdater : MonoBehaviour
 
     private void Update()
     {
-        BulletsCountUI.text = Weapon.GetBulletsCount().ToString();
+        BulletsCountUI.text = Equipment.BulletsCount.ToString();
     }
 }

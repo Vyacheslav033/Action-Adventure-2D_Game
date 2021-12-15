@@ -5,7 +5,7 @@ public class StartScreenUIManager : MonoBehaviour
 {
     public void StartButtonClicked()
     {
-        SceneManager.LoadScene("Level 4");
+        SceneManager.LoadScene("CutScene");
     }
 
     public void SettingsButtonClicked()

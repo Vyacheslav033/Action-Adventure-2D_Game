@@ -10,7 +10,7 @@ public class EndCutScene : MonoBehaviour
 {
     void Update()
     {
-        if (gameObject.GetComponent<PlayableDirector>().time >= 10.4)
+        if (gameObject.GetComponent<PlayableDirector>().time >= 10.3)
         {
             Invoke("EndScene", 3);
         }
@@ -19,6 +19,6 @@ public class EndCutScene : MonoBehaviour
 
     private void EndScene()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(0);
     }
 }

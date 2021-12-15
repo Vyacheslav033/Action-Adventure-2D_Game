@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class UIShopMenu : MonoBehaviour
 {
-    private const int oneBulletPrice = 10;
+    private const int oneBulletPrice = 25;
 
     public void BuyEquipment()
     {
-        if (CoinCollector.CoinsCount >=  oneBulletPrice)
+        if (Wallet.CoinsCount >=  oneBulletPrice)
         {
-            CoinCollector.CoinsCount -= oneBulletPrice;
+            Wallet.CoinsCount -= oneBulletPrice;
             Equipment.BulletsCount++;
         }
     }

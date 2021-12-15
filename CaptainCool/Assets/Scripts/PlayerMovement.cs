@@ -40,11 +40,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("Menu");
-        }
-
 
         //all input related work done here.
         movement = Input.GetAxisRaw("Horizontal");   //geting the input on horizontal axis.
